@@ -5,7 +5,8 @@ import {
 } from './code.org.js';
 import {
     clearForm,
-    getPizza
+    getPizza,
+    writePizzaList
 } from './escolhas.js';
 
 
@@ -26,6 +27,7 @@ onEvent("buttonCreate", "click", function () {
     // escolherMassa();
     // escolherMolho();
     // escolherTipo();
+   writePizzaList(listaPizzas);
 });
 
 onEvent("buttonBack", "click", function () {

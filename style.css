@@ -93,8 +93,7 @@ section ul {
   display: none;
 }
 
-#carrinho {
-  background: #05c9c9;
+/* #buttonCart {
   color: rgb(23, 19, 19);
   border-style: outset;
   border-color: #141415;
@@ -102,7 +101,4 @@ section ul {
   width: 50px;
   font: bold15px arial, sans-serif;
   text-shadow: none;
-}
-  
-
-  
+} */
