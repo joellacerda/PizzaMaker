@@ -1,12 +1,12 @@
 import {
-    onEvent, 
-    showElement, 
-    setScreen} from './code.org.js';
+    onEvent,
+    showElement,
+    setScreen
+} from './code.org.js';
 import {
-escolherMassa,
-escolherMolho,
-escolherTipo
- } from './escolhas.js';
+    clearForm,
+    getPizza
+} from './escolhas.js';
 
 
 //Quando 1 das 3 opções estiver marcada o botão create irá aparecer
@@ -23,11 +23,17 @@ onEvent("radioBase3", "click", function () {
 //mostrando o resultado da pizza baseado nas opções escolhidas
 onEvent("buttonCreate", "click", function () {
     setScreen("screenPizza");
-    escolherMassa();
-    escolherMolho();
-    escolherTipo();
+    // escolherMassa();
+    // escolherMolho();
+    // escolherTipo();
 });
 
 onEvent("buttonBack", "click", function () {
     setScreen("screenMaker");
+});
+
+var listaPizzas = [];
+onEvent("buttonCart", "click", function () {
+    listaPizzas.push(getPizza());
+    clearForm();
 });

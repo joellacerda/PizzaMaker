@@ -1,8 +1,9 @@
 import {
-    showElement, 
-    hideElement, 
-    getProperty, 
-    setImageURL
+    showElement,
+    hideElement,
+    getProperty,
+    setImageURL,
+    setProperty
 } from './code.org.js';
 
 export function escolherMassa() {
@@ -80,4 +81,22 @@ export function escolherTipo() {
             hideElement("imageVeg");
         }
     }
+}
+
+export function clearForm() {
+    setProperty('radioBase1', 'checked', false)
+    setProperty('radioBase2', 'checked', false)
+    setProperty('radioBase3', 'checked', false)
+    setProperty('checkboxveg', 'checked', false)
+    setProperty('checkboxNon-veg', 'checked', false)
+    setProperty('radioRedSauce', 'checked', false)
+    setProperty('radioYellowSauce', 'checked', false)
+}
+
+export function getPizza() {
+    return {
+        molho: { amarelo: getProperty('radioYellowSauce', 'checked'), vermelho: getProperty('radioRedSauce', 'checked') },
+        tipo: { naoVegano: getProperty('checkboxNon-veg', 'checked'), vegano: getProperty('checkboxveg', 'checked') },
+        massa: { borda: getProperty('radioBase1', 'checked'), fina: getProperty('radioBase3', 'checked'), tradicional: getProperty('radioBase2', 'checked') }
+    };
 }
